@@ -1,17 +1,7 @@
-# Platforms Module
+# Platforms
 
-Platform-specific implementations for Jarvis.
+Platform-specific implementations and wrappers.
 
-## Structure
-
-- **macos/** - Native macOS application
-- **android/** - Native Android application
-- **server/** - Optional cloud backend
-
-## Design Pattern
-
-Each platform uses the same core engine but implements platform-specific:
-- UI/UX layers
-- Native integrations
-- Performance optimizations
-- Device-specific features
+- platforms/macos - (left as-is for now)
+- platforms/android - Android app skeleton (Kotlin/Compose)
+- platforms/server - FastAPI bridge that exposes the Python core over HTTP
