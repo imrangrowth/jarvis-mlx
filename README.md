@@ -1,33 +1,126 @@
-# Jarvis MLX
+# Jarvis MLX - Hybrid Architecture
 
-⚠️ This project is very out of date - while it offers a great place to start, it does not reflect current progress! [Follow me on IG for updates!](https://instagram.com/huwprosser)
+**An all-in-one productivity solution running offline on macOS and Android using state-of-the-art technology.**
 
-An all-in-one solution to stark-level productivity running offline on your MacBook using SOTA technology and MLX, Apple's new machine learning framework optimized for Apple Silicon.
+## 🎯 Overview
 
-Native python is required to run MLX libs:
-`python -c "import platform; print(platform.processor())"`
-should say "arm"
+Jarvis MLX is a cross-platform application that brings powerful AI capabilities to your devices while maintaining complete offline functionality. Built with a hybrid architecture that separates platform-agnostic ML operations from platform-specific implementations.
 
-`CONDA_SUBDIR=osx-arm64 conda create -n native numpy -c conda-forge`
-will create a conda env with numpy for arm64 called "native"
+## ✨ Features
 
-Firstly, pip install the requirements:
-`pip install -r requirements.txt`
+### Core Capabilities
+- 🎤 **Speech-to-Text (STT)** - Accurate offline speech recognition
+- 🧠 **Large Language Models (LLM)** - Powerful local AI inference
+- 🔊 **Text-to-Speech (TTS)** - Natural-sounding voice synthesis
 
-## Speech-to-text (STT)
+### Platform Features
 
-Using Whisper for this. SOTA speech recognition opensourced by openai and trained on 1.5k hours of audio. It's a tiny model that runs on your macbook, upgradable to larger models in the series for better performance.
+#### macOS
+- Native SwiftUI interface
+- Spotlight integration
+- Menu bar support
+- System shortcuts
+- Native notifications
 
-Helpful link: [Whisper MLX](https://github.com/ml-explore/mlx-examples/tree/main/whisper)
+#### Android
+- Native Jetpack Compose UI
+- Material Design 3
+- Voice commands
+- Background services
+- Device integration
 
-## Large Language Model
+## 📁 Project Structure
 
-Using Phi 3 out the box you can achieve 60 tokens per second on an M1 Max. You can also finetune your own models and load them in. I'd highly recommend Mistral or Llama 3.
+```
+jarvis-mlx/
+├── core/              # Platform-agnostic ML engine
+├── platforms/         # Platform-specific implementations
+│   ├── macos/
+│   └── android/
+└── shared/            # Common utilities
+```
 
-## Text-to-speech (TTS)
+See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed architecture documentation.
 
-For this, I opted to use [MeloTTS](https://github.com/myshell-ai/MeloTTS?tab=readme-ov-file). It's not as hyped up as some other offerings but it's fast, runs on a mac and finetunable on custom data using the original repo. A stripped down version of the inference code for english can be found in [/melo](melo/).
+## 🚀 Getting Started
 
-###### Please note, out the box Jarvis-mlx has a female voice. You will need to train your own MeloTTS model to change this. Finetuning Phi 3 will also achieve much better behaviour.
+### Prerequisites
 
-PRs Welcome!
+#### macOS Development
+- macOS 12.0 or later
+- Xcode 13 or later
+- Swift 5.5 or later
+
+#### Android Development
+- Android API 29 or later
+- Android Studio 2022.1 or later
+- Kotlin 1.8 or later
+
+### Quick Start
+
+#### macOS
+```bash
+cd platforms/macos
+open JarvisMlx.xcodeproj
+# Build and run in Xcode
+```
+
+#### Android
+```bash
+cd platforms/android
+# Open in Android Studio and run
+```
+
+## 📚 Documentation
+
+- [Architecture](ARCHITECTURE.md) - Detailed system design
+- [Core Module](core/README.md) - ML engine documentation
+- [macOS Platform](platforms/macos/README.md) - macOS app guide
+- [Android Platform](platforms/android/README.md) - Android app guide
+- [Shared Utilities](shared/README.md) - Common utilities documentation
+
+## 🔄 Architecture Benefits
+
+✅ **No Capability Loss** - Full feature parity across platforms
+✅ **Easy Maintenance** - Changes to ML engine update both platforms
+✅ **Native Performance** - Each platform uses native technologies
+✅ **Offline First** - Complete offline functionality
+✅ **Scalable** - Easy to add new platforms
+
+## 📋 Roadmap
+
+- [x] Hybrid architecture foundation
+- [x] Android support
+- [ ] Advanced ML model optimization
+- [ ] Cloud sync (optional)
+- [ ] iOS support
+- [ ] Web interface
+- [ ] Plugin system
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these guidelines:
+
+1. Create a feature branch
+2. Make your changes
+3. Add tests and documentation
+4. Submit a pull request
+
+## 📝 License
+
+MIT License - See LICENSE file for details
+
+## 🔗 Resources
+
+- [MLX Framework](https://ml-explore.github.io/mlx/)
+- [Swift Documentation](https://swift.org)
+- [Kotlin Documentation](https://kotlinlang.org)
+- [Jetpack Compose](https://developer.android.com/jetpack/compose)
+
+## 💬 Support
+
+For issues and questions, please open an issue on GitHub.
+
+---
+
+**Status**: 🚀 Active Development
