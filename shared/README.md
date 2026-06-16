@@ -1,6 +1,3 @@
-# Shared
+# Shared Module
 
-Shared utilities, data models and configuration used by multiple platforms.
-
-- shared/models - dataclasses for requests/responses
-- shared/utils - validators, logger
+Common utilities and helpers shared across all platforms.

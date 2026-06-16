@@ -1,9 +1,16 @@
 # Core Module - Platform-Agnostic ML Engine
 
-This directory will contain the platform-agnostic ML engine that powers Jarvis across all platforms.
+This directory contains the platform-agnostic ML engine that powers Jarvis across all platforms.
 
-- llm/ - LLM interface and loaders
-- stt/ - STT interface (whisper wrappers)
-- tts/ - TTS interface (MeloTTS wrappers)
+## Structure
 
-Purpose: consolidate ML logic so it can be exposed by a server bridge for Android and reused by macOS.
+- **llm/** - Large Language Model implementation and interfaces
+- **stt/** - Speech-to-Text engine
+- **tts/** - Text-to-Speech engine
+
+## Features
+
+- Unified API for all ML operations
+- Optimized for offline use
+- Support for MLX framework
+- Cross-platform compatibility
